@@ -17,7 +17,7 @@ function StateStack:processAI(params, dt)
     self.state[#self.states]:processAI(params, dt)
 end
 
-function StateStack:reander()
+function StateStack:render()
     for i, state in ipairs(self.states) do
         state:render()
     end
