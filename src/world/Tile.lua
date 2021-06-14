@@ -1,12 +1,12 @@
 Tile = Class()
 
-function Tile:Init(id,x,y,sprite)
+function Tile:init(x,y, id)
     self.id = id
     self.x = x
     self.y = y
-    self.sprite = sprite
+
 end
 
-function Tile:Render()
-    love.graphics.draw(gTextures[self.sprite], self.x, self.y)
+function Tile:render()
+    love.graphics.draw(gTextures['tile-1'], (self.x - 1) * TILE_SIZE, (self.y - 1) * TILE_SIZE)
 end
