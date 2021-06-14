@@ -1,0 +1,5 @@
+ENTITY_DEFS = {
+    ['player'] = {
+        
+    }
+}

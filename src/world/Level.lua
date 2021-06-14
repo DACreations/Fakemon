@@ -11,7 +11,6 @@ function Level:init()
     self:createMaps()
 
     self.player = Player {
-        animations = ENTITY_DEFS['player'].animations,
         mapX = 10,
         mapY = 10,
         width = 16,

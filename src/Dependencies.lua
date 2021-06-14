@@ -13,15 +13,14 @@ require 'src.states.game.FadeOutState'
 require 'src.states.game.PlayState'
 require 'src.states.game.DialogueState'
 
---[[ require 'src.world.Level'
+require 'src.world.Level'
 require 'src.world.tile_ids'
 require 'src.world.Tile'
 require 'src.world.TileMap'
 
 require 'src.entity.Entity'
 require 'src.entity.entity_defs'
-require 'src.entity.NPC'
-require 'src.entity.Player' ]]
+require 'src.entity.Player'
 
 require 'src.fakemon_defs'
 
@@ -45,6 +44,8 @@ gTextures = {
     ['unknown-front'] = love.graphics.newImage('graphics/unknown.png'),
     ['unknown-back'] = love.graphics.newImage('graphics/unknown detras.png'),
 
+
+    ['protaF-front'] = love.graphics.newImage('graphics/protaF.png')
+
     ['tile-1'] = love.graphics.newImage('graphics/tierra_3.png')
-    
 }
