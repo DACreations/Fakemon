@@ -58,7 +58,9 @@ function StartState:render()
     love.graphics.setFont(gFonts['small'])
 
     love.graphics.setColor(0.17, 0.72, 0.17, 0.4862)
-    love.graphics.ellipse('fill', VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2 + 32, 72, 24)
+    love.graphics.ellipse('fill', VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2 + 32, 70, 22)
+    love.graphics.setColor(0.17, 0.6, 0.17, 0.4862)
+    love.graphics.ellipse('fill', VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2 + 32, 74, 25)
 
     love.graphics.setColor(1, 1, 1, 1)
     love.graphics.draw(gTextures[self.sprite], self.spriteX, self.spriteY)

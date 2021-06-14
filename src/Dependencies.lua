@@ -40,5 +40,8 @@ gTextures = {
     ['hierba'] = love.graphics.newImage('graphics/tierra_3.png'),
 
     ['uno-front'] = love.graphics.newImage('graphics/1.png'),
-    ['uno-back'] = love.graphics.newImage('graphics/1 detras.png')
+    ['uno-back'] = love.graphics.newImage('graphics/1 detras.png'),
+
+    ['unknown-front'] = love.graphics.newImage('graphics/unknown.png'),
+    ['unknown-back'] = love.graphics.newImage('graphics/unknown detras.png')
 }
