@@ -1,4 +1,4 @@
-StartState = Class{__includes = BaseState}
+StartState = Class{__include = BaseState}
 
 function StartState:init() 
     gSounds['intro-music']:play()
@@ -23,3 +23,5 @@ function StartState:render()
     love.graphics.setColor(45, 184, 45, 124)
     love.graphics.ellipse('fill', VIRTUAL_WIDTH / 2, VIRTUAL_HEIGHT / 2 + 32, 72, 24)
 end
+
+function StartState:enter() end
