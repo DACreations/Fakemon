@@ -3,6 +3,8 @@ Entity = Class{}
 function Entity:init(def)
     self.direction = 'down'
 
+    self.animations = self:createAnimations(def.animations)
+
     self.mapX = def.mapX
     self.mapY = def.mapY
 
@@ -10,29 +12,49 @@ function Entity:init(def)
     self.height = def.height
 
     self.x = (self.mapX - 1) * TILE_SIZE
+
+    -- halfway raised on the tile just to simulate height/perspective
     self.y = (self.mapY - 1) * TILE_SIZE - self.height / 2
 end
 
+function Entity:changeState(name)
+    self.stateMachine:change(name)
+end
+
+function Entity:changeAnimation(name)
+    self.currentAnimation = self.animations[name]
+end
+
+function Entity:createAnimations(animations)
+    local animationsReturned = {}
+
+    for k, animationDef in pairs(animations) do
+        animationsReturned[k] = Animation {
+            texture = animationDef.texture or 'entities',
+            frames = animationDef.frames,
+            interval = animationDef.interval
+        }
+    end
+
+    return animationsReturned
+end
+
+--[[
+    Called when we interact with this entity, as by pressing enter.
+]]
 function Entity:onInteract()
 
 end
 
-function Entity:render() 
-    love.graphics.draw(gTextures['protaF-front'], self.x, self.y)
+function Entity:processAI(params, dt)
+    self.stateMachine:processAI(params, dt)
 end
 
 function Entity:update(dt)
-    if love.keyboard.wasPressed('up') then
-        self.y =  self.y - TILE_SIZE
-    end
-    if love.keyboard.wasPressed('down') then
-        self.y = self.y + TILE_SIZE
-    end
-    if love.keyboard.wasPressed('left') then
-        self.x = self.x - TILE_SIZE
-    end
-    if love.keyboard.wasPressed('right') then
-        self.x = self.x + TILE_SIZE
-    end
-    love.keyboard.keysPressed = {}
+    self.currentAnimation:update(dt)
+    self.stateMachine:update(dt)
+end
+
+function Entity:render()
+    self.stateMachine:render()
 end

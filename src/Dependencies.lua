@@ -4,6 +4,9 @@ push = require "lib.push"
 Timer = require "lib.knife.timer"
 
 require 'src.constants'
+require 'src.StateMachine'
+require 'src.Animation'
+require 'src.Util'
 
 require 'src.states.StateStack'
 require 'src.states.BaseState'
@@ -12,6 +15,11 @@ require 'src.states.game.FadeInState'
 require 'src.states.game.FadeOutState'
 require 'src.states.game.PlayState'
 require 'src.states.game.DialogueState'
+require 'src/states/entity/EntityBaseState'
+require 'src/states/entity/EntityIdleState'
+require 'src/states/entity/EntityWalkState'
+require 'src/states/entity/PlayerIdleState'
+require 'src/states/entity/PlayerWalkState'
 
 require 'src.world.Level'
 require 'src.world.tile_ids'
@@ -48,5 +56,11 @@ gTextures = {
 
     ['protaF-front'] = love.graphics.newImage('graphics/protaF.png'),
 
-    ['tile-1'] = love.graphics.newImage('graphics/tierra_3.png')
+    ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
+    ['entities'] = love.graphics.newImage('graphics/entities.png')
+}
+
+gFrames = {
+    ['tiles'] = GenerateQuads(gTextures['tiles'], 16, 16),
+    ['entities'] = GenerateQuads(gTextures['entities'], 16, 16)
 }
