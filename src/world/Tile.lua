@@ -7,6 +7,11 @@ function Tile:init(x,y, id)
 
 end
 
+function Tile:update(dt)
+
+end
+
 function Tile:render()
-    love.graphics.draw(gTextures['tile-1'], (self.x - 1) * TILE_SIZE, (self.y - 1) * TILE_SIZE)
+    love.graphics.draw(gTextures['tiles'], gFrames['tiles'][self.id],
+        (self.x - 1) * TILE_SIZE, (self.y - 1) * TILE_SIZE)
 end
