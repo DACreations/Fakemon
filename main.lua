@@ -1,5 +1,7 @@
 require 'src/Dependencies'
 
+
+
 function love.load()
     love.window.setTitle('Fakemon')
     love.graphics.setDefaultFilter('nearest', 'nearest')
