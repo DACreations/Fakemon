@@ -5,3 +5,4 @@ Timer = require "lib.knife.timer"
 
 require 'src.constants'
 require 'src.states.StateStack'
+require 'src.states.game.StartState'
