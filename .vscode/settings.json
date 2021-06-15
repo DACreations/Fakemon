@@ -1,0 +1,10 @@
+{
+    "Lua.diagnostics.globals": [
+        "love",
+        "class_commons",
+        "BattleState"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
+}
