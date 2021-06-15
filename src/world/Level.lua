@@ -17,6 +17,12 @@ function Level:init()
         width = 16,
         height = 16
     }
+
+    self.player.stateMachine = StateMachine {
+        ['walk'] = function () return PlayerWalkState(self.player, self) end,
+        ['idle'] = function () return PlayerIdleState(self.player) end
+    }
+    self.player.stateMachine:change('idle')
 end
 
 function Level:createMaps()

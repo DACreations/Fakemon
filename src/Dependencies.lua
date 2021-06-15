@@ -4,6 +4,9 @@ push = require "lib.push"
 Timer = require "lib.knife.timer"
 
 require 'src.constants'
+require 'src.StateMachine'
+require 'src.Animation'
+require 'src.Util'
 
 require 'src.states.StateStack'
 require 'src.states.BaseState'
@@ -12,16 +15,20 @@ require 'src.states.game.FadeInState'
 require 'src.states.game.FadeOutState'
 require 'src.states.game.PlayState'
 require 'src.states.game.DialogueState'
+require 'src/states/entity/EntityBaseState'
+require 'src/states/entity/EntityIdleState'
+require 'src/states/entity/EntityWalkState'
+require 'src/states/entity/PlayerIdleState'
+require 'src/states/entity/PlayerWalkState'
 
---[[ require 'src.world.Level'
+require 'src.world.Level'
 require 'src.world.tile_ids'
 require 'src.world.Tile'
 require 'src.world.TileMap'
 
 require 'src.entity.Entity'
 require 'src.entity.entity_defs'
-require 'src.entity.NPC'
-require 'src.entity.Player' ]]
+require 'src.entity.Player'
 
 require 'src.fakemon_defs'
 
@@ -33,7 +40,8 @@ gFonts = {
 }
 
 gSounds = {
-    ['intro-music'] = love.audio.newSource('sound/intro.wav', 'stream')
+    ['intro-music'] = love.audio.newSource('sound/intro.wav', 'stream'),
+    ['field-music'] = love.audio.newSource('sound/evil A-1.wav', 'stream')
 }
 
 gTextures = {
@@ -45,6 +53,14 @@ gTextures = {
     ['unknown-front'] = love.graphics.newImage('graphics/unknown.png'),
     ['unknown-back'] = love.graphics.newImage('graphics/unknown detras.png'),
 
-    ['tile-1'] = love.graphics.newImage('graphics/tierra_3.png')
-    
+
+    ['protaF-front'] = love.graphics.newImage('graphics/protaF.png'),
+
+    ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
+    ['entities'] = love.graphics.newImage('graphics/entities.png')
+}
+
+gFrames = {
+    ['tiles'] = GenerateQuads(gTextures['tiles'], 16, 16),
+    ['entities'] = GenerateQuads(gTextures['entities'], 16, 16)
 }
