@@ -67,7 +67,7 @@ gTextures = {
 
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
 
-    ['entities'] = love.graphics.newImage('graphics/mierda.png')
+    ['entities'] = love.graphics.newImage('graphics/mierda.png'),
 
     ['panel'] = love.graphics.newImage('graphics/blue-ui.png')
 
