@@ -16,11 +16,15 @@ require 'src.states.game.FadeInState'
 require 'src.states.game.FadeOutState'
 require 'src.states.game.PlayState'
 require 'src.states.game.DialogueState'
+require 'src.states.game.BattleState'
+
 require 'src/states/entity/EntityBaseState'
 require 'src/states/entity/EntityIdleState'
 require 'src/states/entity/EntityWalkState'
 require 'src/states/entity/PlayerIdleState'
 require 'src/states/entity/PlayerWalkState'
+require 'src/states/entity/NPCIdleState'
+require 'src/states/entity/NPCWalkState'
 
 require 'src.world.Level'
 require 'src.world.tile_ids'
@@ -30,6 +34,8 @@ require 'src.world.TileMap'
 require 'src.entity.Entity'
 require 'src.entity.entity_defs'
 require 'src.entity.Player'
+require 'src.entity.NPC'
+require 'src.entity.NPC_movements'
 
 require 'src.ui.Panel'
 require 'src.ui.PanelPiece'
@@ -43,7 +49,7 @@ gFonts = {
 
 gSounds = {
     ['intro-music'] = love.audio.newSource('sound/intro.wav', 'stream'),
-    ['field-music'] = love.audio.newSource('sound/evil A-1.wav', 'stream')
+    ['field-music'] = love.audio.newSource('sound/tension/tension.wav', 'stream')
 }
 
 gTextures = {
@@ -55,11 +61,12 @@ gTextures = {
     ['unknown-front'] = love.graphics.newImage('graphics/unknown.png'),
     ['unknown-back'] = love.graphics.newImage('graphics/unknown detras.png'),
 
-
-    ['protaF-front'] = love.graphics.newImage('graphics/protaF.png'),
+    ['ovni'] = love.graphics.newImage('graphics/ovni.png'),
 
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
-    ['entities'] = love.graphics.newImage('graphics/entities.png'),
+
+    ['entities'] = love.graphics.newImage('graphics/mierda.png')
+
     ['panel'] = love.graphics.newImage('graphics/blue-ui.png')
 
 }

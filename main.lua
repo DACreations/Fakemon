@@ -37,6 +37,7 @@ function love.update(dt)
     Timer.update(dt)
     gStateStack:update(dt)
     
+    print(dt)
     love.keyboard.keysPressed = {}
 end
 

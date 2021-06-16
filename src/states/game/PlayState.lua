@@ -5,6 +5,7 @@ function PlayState:init()
 
     gSounds['field-music']:setLooping(true)
     gSounds['field-music']:play()
+    gSounds['field-music']:setVolume(0.5)
 
     self.dialogueOpened = false
 end
