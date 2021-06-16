@@ -7,6 +7,7 @@ require 'src.constants'
 require 'src.StateMachine'
 require 'src.Animation'
 require 'src.Util'
+require 'src.fakemon_defs'
 
 require 'src.states.StateStack'
 require 'src.states.BaseState'
@@ -36,7 +37,8 @@ require 'src.entity.Player'
 require 'src.entity.NPC'
 require 'src.entity.NPC_movements'
 
-require 'src.fakemon_defs'
+require 'src.ui.Panel'
+require 'src.ui.PanelPiece'
 
 gFonts = {
     ['small'] = love.graphics.newFont('fonts/font.ttf', 8),
@@ -64,10 +66,15 @@ gTextures = {
     ['ovni-back'] = love.graphics.newImage('graphics/ovni detras.png'),
 
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
+
     ['entities'] = love.graphics.newImage('graphics/mierda.png')
+
+    ['panel'] = love.graphics.newImage('graphics/blue-ui.png')
+
 }
 
 gFrames = {
     ['tiles'] = GenerateQuads(gTextures['tiles'], 16, 16),
-    ['entities'] = GenerateQuads(gTextures['entities'], 16, 16)
+    ['entities'] = GenerateQuads(gTextures['entities'], 16, 16),
+    ['panel'] = GenerateQuads(gTextures['panel'], 16, 16)
 }
