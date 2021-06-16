@@ -12,7 +12,6 @@ function love.load()
     })
 
     gStateStack = StateStack()
-    StartState():enter()
     gStateStack:push(StartState())
 
     love.keyboard.keysPressed = {}

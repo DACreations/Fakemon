@@ -32,10 +32,11 @@ function StartState:update(dt)
         function()
             gSounds['intro-music']:stop()
             self.tween:remove()
-
+    
             gStateStack:pop()
             
             gStateStack:push(PlayState())
+
             gStateStack:push(FadeOutState({
                 r = 1, g = 1, b = 1
             }, 1,
