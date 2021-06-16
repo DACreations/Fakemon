@@ -32,6 +32,7 @@ require 'src.entity.entity_defs'
 require 'src.entity.Player'
 
 require 'src.ui.Panel'
+require 'src.ui.PanelPiece'
 
 gFonts = {
     ['small'] = love.graphics.newFont('fonts/font.ttf', 8),
