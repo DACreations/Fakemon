@@ -18,6 +18,6 @@ FAKEMON_DEFS = {
     ['ovni'] = {
         name = 'Ovni',
         battleSpriteFront = 'ovni',
-        battleSpriteBack = 'unknown-front'
+        battleSpriteBack = 'ovni-back'
     }
 }

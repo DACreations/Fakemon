@@ -47,7 +47,8 @@ gFonts = {
 
 gSounds = {
     ['intro-music'] = love.audio.newSource('sound/intro.wav', 'stream'),
-    ['field-music'] = love.audio.newSource('sound/tension/tension.wav', 'stream')
+    ['field-music'] = love.audio.newSource('sound/tension/tension.wav', 'stream'),
+    ['battle-music'] = love.audio.newSource('sound/unknown/unknown.wav', 'stream')
 }
 
 gTextures = {
@@ -60,6 +61,7 @@ gTextures = {
     ['unknown-back'] = love.graphics.newImage('graphics/unknown detras.png'),
 
     ['ovni'] = love.graphics.newImage('graphics/ovni.png'),
+    ['ovni-back'] = love.graphics.newImage('graphics/ovni detras.png'),
 
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
     ['entities'] = love.graphics.newImage('graphics/mierda.png')
