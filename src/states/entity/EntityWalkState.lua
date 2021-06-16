@@ -44,7 +44,7 @@ function EntityWalkState:attemptMove()
     self.entity.mapY = toY
     self.entity.mapX = toX
 
-    Timer.tween(0.4, {
+    Timer.tween(0.35, {
         [self.entity] = {x = (toX - 1) * TILE_SIZE, y = (toY - 1) * TILE_SIZE - self.entity.height / 2}
     }):finish(function()
         if love.keyboard.isDown('left') then

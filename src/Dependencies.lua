@@ -47,7 +47,7 @@ gFonts = {
 
 gSounds = {
     ['intro-music'] = love.audio.newSource('sound/intro.wav', 'stream'),
-    ['field-music'] = love.audio.newSource('sound/evil A-1.wav', 'stream')
+    ['field-music'] = love.audio.newSource('sound/tension/tension.wav', 'stream')
 }
 
 gTextures = {
@@ -59,10 +59,10 @@ gTextures = {
     ['unknown-front'] = love.graphics.newImage('graphics/unknown.png'),
     ['unknown-back'] = love.graphics.newImage('graphics/unknown detras.png'),
 
-    ['protaF-front'] = love.graphics.newImage('graphics/protaF.png'),
+    ['ovni'] = love.graphics.newImage('graphics/ovni.png'),
 
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
-    ['entities'] = love.graphics.newImage('graphics/entities.png')
+    ['entities'] = love.graphics.newImage('graphics/mierda.png')
 }
 
 gFrames = {

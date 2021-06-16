@@ -1,6 +1,7 @@
 FAKEMON_IDS = {
     'uno',
-    'unknown'
+    'unknown',
+    'ovni'
 }
 
 FAKEMON_DEFS = {
@@ -13,5 +14,10 @@ FAKEMON_DEFS = {
         name = 'Unknown',
         battleSpriteFront = 'unknown-front',
         battleSpriteBack = 'unknown-back'
+    },
+    ['ovni'] = {
+        name = 'Ovni',
+        battleSpriteFront = 'ovni',
+        battleSpriteBack = 'unknown-front'
     }
 }

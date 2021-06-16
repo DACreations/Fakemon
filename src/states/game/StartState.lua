@@ -2,6 +2,7 @@ StartState = Class{__includes = BaseState}
 
 function StartState:init() 
     gSounds['intro-music']:play()
+    gSounds['intro-music']:setVolume(0.5)
 
     self.sprite = FAKEMON_DEFS[FAKEMON_IDS[math.random(#FAKEMON_IDS)]].battleSpriteFront
     self.spriteX = VIRTUAL_WIDTH / 2 - 32

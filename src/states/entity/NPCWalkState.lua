@@ -40,7 +40,7 @@ function NPCWalkState:attemptMove()
     self.entity.mapY = toY
     self.entity.mapX = toX
 
-    Timer.tween(0.25, {
+    Timer.tween(0.5, {
         [self.entity] = {x = (toX - 1) * TILE_SIZE, y = (toY - 1) * TILE_SIZE - self.entity.height / 2}
     }):finish(function() self.entity:changeState('idle') end)
 end
