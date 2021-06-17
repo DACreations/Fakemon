@@ -9,6 +9,7 @@ require 'src.Animation'
 require 'src.Util'
 require 'src.fakemon_defs'
 require 'src.Fakemon'
+require 'src.Party'
 
 require 'src.battle.BattleSprite'
 require 'src.battle.Opponent'
@@ -21,6 +22,10 @@ require 'src.states.game.FadeOutState'
 require 'src.states.game.PlayState'
 require 'src.states.game.DialogueState'
 require 'src.states.game.BattleState'
+require 'src.states.game.BattleMessageState'
+require 'src.states.game.BattleMenuState'
+require 'src.states.game.TakeTurnState'
+
 
 require 'src/states/entity/EntityBaseState'
 require 'src/states/entity/EntityIdleState'
@@ -43,6 +48,9 @@ require 'src.entity.NPC_movements'
 
 require 'src.ui.Panel'
 require 'src.ui.Textbox'
+require 'src.ui.ProgressBar'
+require 'src.ui.Menu'
+require 'src.ui.Selection'
 
 -- require 'src.ui.PanelPiece'
 
@@ -58,8 +66,16 @@ gSounds = {
     ['intro-music'] = love.audio.newSource('sound/music/intro.wav', 'stream'),
     ['field-music'] = love.audio.newSource('sound/music/tension/tension.wav', 'stream'),
     ['battle-music'] = love.audio.newSource('sound/music/unknown/unknown.wav', 'stream'),
+    ['victory-music'] = love.audio.newSource('sound/music/malbao/evil B-2.wav', 'stream'),
 
-    ['accept'] = love.audio.newSource('sound/sound/SFX_PRESS_AB.wav', 'static')
+
+    ['accept'] = love.audio.newSource('sound/sound/SFX_PRESS_AB.wav', 'static'),
+    ['blip'] = love.audio.newSource('sound/sound/SFX_PRESS_AB.wav', 'static'),
+    ['run'] = love.audio.newSource('sound/sound/SFX_RUN.wav', 'static'),
+    ['hit'] = love.audio.newSource('sound/sound/SFX_CYMBAL_3.wav', 'static'),
+    ['powerup'] = love.audio.newSource('sound/sound/SFX_WITHDRAW_DEPOSIT.wav', 'static'),
+    ['fainted'] = love.audio.newSource('sound/sound/SFX_FAINT_FALL.wav', 'static'),
+    ['exp'] = love.audio.newSource('sound/sound/SFX_HEAL_UP.wav', 'static')
 }
 
 gTextures = {
@@ -78,8 +94,8 @@ gTextures = {
 
     ['entities'] = love.graphics.newImage('graphics/entities.png'),
 
-    ['panel'] = love.graphics.newImage('graphics/blue-ui.png')
-
+    ['panel'] = love.graphics.newImage('graphics/blue-ui.png'),
+    ['cursor'] = love.graphics.newImage('graphics/cursor.png')
 }
 
 gFrames = {
