@@ -27,7 +27,7 @@ function BattleState:init(player)
         y = VIRTUAL_HEIGHT - 80,
         width = 152,
         height = 6,
-        color = {r = 189, g = 32, b = 32},
+        color = {r = 0.7411, g = 0.1254, b = 0.1254},
         value = self.player.party.pokemon[1].currentHP,
         max = self.player.party.pokemon[1].HP
     }
@@ -37,7 +37,7 @@ function BattleState:init(player)
         y = 8,
         width = 152,
         height = 6,
-        color = {r = 189, g = 32, b = 32},
+        color = {r = 0.7411, g = 0.1254, b = 0.1254},
         value = self.opponent.party.pokemon[1].currentHP,
         max = self.opponent.party.pokemon[1].HP
     }
@@ -48,8 +48,8 @@ function BattleState:init(player)
         y = VIRTUAL_HEIGHT - 73,
         width = 152,
         height = 6,
-        color = {r = 32, g = 32, b = 189},
-        value = self.player.party.pokemon[1].currentExp,
+        color = {r = 0.1254, g = 0.1254, b = 0.7411},
+        value = self.player.party.pokemon[1].currentXP,
         max = self.player.party.pokemon[1].expToLevel
     }
 
