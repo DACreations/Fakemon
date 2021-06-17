@@ -8,6 +8,10 @@ require 'src.StateMachine'
 require 'src.Animation'
 require 'src.Util'
 require 'src.fakemon_defs'
+require 'src.Fakemon'
+
+require 'src.battle.BattleSprite'
+require 'src.battle.Opponent'
 
 require 'src.states.StateStack'
 require 'src.states.BaseState'
@@ -38,19 +42,24 @@ require 'src.entity.NPC'
 require 'src.entity.NPC_movements'
 
 require 'src.ui.Panel'
-require 'src.ui.PanelPiece'
+require 'src.ui.Textbox'
+
+-- require 'src.ui.PanelPiece'
 
 gFonts = {
     ['small'] = love.graphics.newFont('fonts/font.ttf', 8),
+    ['text'] = love.graphics.newFont('fonts/PKMN RBYGSC.ttf', 8),
     ['medium'] = love.graphics.newFont('fonts/font.ttf', 16),
     ['large'] = love.graphics.newFont('fonts/font.ttf', 32),
     ['large+1'] = love.graphics.newFont('fonts/font.ttf', 33)
 }
 
 gSounds = {
-    ['intro-music'] = love.audio.newSource('sound/intro.wav', 'stream'),
-    ['field-music'] = love.audio.newSource('sound/tension/tension.wav', 'stream'),
-    ['battle-music'] = love.audio.newSource('sound/unknown/unknown.wav', 'stream')
+    ['intro-music'] = love.audio.newSource('sound/music/intro.wav', 'stream'),
+    ['field-music'] = love.audio.newSource('sound/music/tension/tension.wav', 'stream'),
+    ['battle-music'] = love.audio.newSource('sound/music/unknown/unknown.wav', 'stream'),
+
+    ['accept'] = love.audio.newSource('sound/sound/SFX_PRESS_AB.wav', 'static')
 }
 
 gTextures = {
@@ -67,7 +76,7 @@ gTextures = {
 
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
 
-    ['entities'] = love.graphics.newImage('graphics/mierda.png'),
+    ['entities'] = love.graphics.newImage('graphics/entities.png'),
 
     ['panel'] = love.graphics.newImage('graphics/blue-ui.png')
 
