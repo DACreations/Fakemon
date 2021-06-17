@@ -14,12 +14,12 @@ end
 
 function NPCIdleState:randomMovement()
     random = math.random( 100 )
-    if random > 90 then
-        if random < 92.5 then
+    if random > 96 then
+        if random < 97 then
             self.entity.direction = 'left'
-        elseif random < 95 then
+        elseif random < 98 then
             self.entity.direction = 'right'
-        elseif random < 97.5 then
+        elseif random < 99 then
             self.entity.direction = 'up'
         else
             self.entity.direction = 'down'
@@ -30,10 +30,13 @@ end
 
 function NPCIdleState:lateralMovement()
     random = math.random( 100 )
-    if random > 50 then
+    if random > 80 then
         self.entity.direction = 'left'
-    else
+        self.entity:changeState('walk')
+    elseif random > 90 then
         self.entity.direction = 'right'
+        self.entity:changeState('walk')
+    else
+        self.entity:changeState('idle')
     end
-    self.entity:changeState('walk')
 end
