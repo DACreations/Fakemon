@@ -9,9 +9,9 @@ function Textbox:init(x, y, width, height, text, font)
 
     self.text = text
     self.font = font or gFonts['small']
-    _, self.textChunks = self.font:getWrap(self.text, self.width - 12)
+    _, self.textPages = self.font:getWrap(self.text, self.width - 12)
 
-    self.chunkCounter = 1
+    self.pageCounter = 1
     self.endOfText = false
     self.closed = false
 
@@ -22,21 +22,21 @@ end
     Goes to the next page of text if there is any, otherwise toggles the textbox.
 ]]
 function Textbox:nextChunks()
-    local chunks = {}
+    local pages = {}
 
-    for i = self.chunkCounter, self.chunkCounter + 2 do
-        table.insert(chunks, self.textChunks[i])
+    for i = self.pageCounter, self.pageCounter + 2 do
+        table.insert(pages, self.textPages[i])
 
-        -- if we've reached the number of total chunks, we can return
-        if i == #self.textChunks then
+        -- if we've reached the number of total pages, we can return
+        if i == #self.textPages then
             self.endOfText = true
-            return chunks
+            return pages
         end
     end
 
-    self.chunkCounter = self.chunkCounter + 3
+    self.pageCounter = self.pageCounter + 3
 
-    return chunks
+    return pages
 end
 
 function Textbox:next()

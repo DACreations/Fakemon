@@ -2,7 +2,11 @@
     "Lua.diagnostics.globals": [
         "love",
         "class_commons",
-        "BattleState"
+        "BattleState",
+        "ProgressBar",
+        "BattleMessageState",
+        "Party",
+        "BattleMenuState"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global"
