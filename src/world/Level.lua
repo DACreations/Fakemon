@@ -17,6 +17,14 @@ function Level:init()
         static = true
     }
 
+    self.player = Player {
+        animations = ENTITY_DEFS['player'].animations,
+        mapX = 10,
+        mapY = 10,
+        width = 16,
+        height = 16
+    }
+    
     self:createMaps()
     self:createPlayer()
     self:createNPC(self.npc1)
@@ -58,14 +66,6 @@ function Level:render()
 end
 
 function Level:createPlayer()
-    self.player = Player {
-        animations = ENTITY_DEFS['player'].animations,
-        mapX = 10,
-        mapY = 10,
-        width = 16,
-        height = 16
-    }
-
     self.player.stateMachine = StateMachine {
         ['walk'] = function () return PlayerWalkState(self.player, self) end,
         ['idle'] = function () return PlayerIdleState(self.player) end

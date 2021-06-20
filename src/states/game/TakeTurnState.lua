@@ -212,8 +212,14 @@ function TakeTurnState:victory()
 
                         -- set our exp to whatever the overlap is
                         self.playerPokemon.currentXP = self.playerPokemon.currentXP - self.playerPokemon.expToLevel
-                        self.playerPokemon:levelUp()
-
+                        levels = self.playerPokemon:levelUp()
+                        gStateStack:push(BattleMenuState(VIRTUAL_WIDTH - 100, 0, 100, VIRTUAL_HEIGHT - 48, 
+                                                        "HP + " + levels[0] + 
+                                                        "ATT + " + levels[1] + "\n"+
+                                                        "DEF + " + levels[2] + "\n"+ 
+                                                        "SAT + " + levels[3] + "\n"+ 
+                                                        "SDF + " + levels[4] + "\n"+
+                                                        "SPD + " + levels[5] + "\n"))
                         gStateStack:push(BattleMessageState('Congratulations! Level Up!',
                         function()
                             self:fadeOutWhite()

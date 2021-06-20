@@ -94,7 +94,7 @@ function Fakemon:statsLevelUp()
         end
     end
 
-    return HPIncrease, attackIncrease, defenseIncrease, spAttackIncrease, spDefenseIncrease, speedIncrease
+    return {HPIncrease, attackIncrease, defenseIncrease, spAttackIncrease, spDefenseIncrease, speedIncrease}
 end
 
 function Fakemon:levelUp()

@@ -1,7 +1,8 @@
 FAKEMON_IDS = {
     'uno',
     'unknown',
-    'ovni'
+    'ovni',
+    'milotic'
 }
 
 FAKEMON_DEFS = {
@@ -43,6 +44,23 @@ FAKEMON_DEFS = {
         name = 'Ovni',
         battleSpriteFront = 'ovni',
         battleSpriteBack = 'ovni-back',
+        baseHP = 14,
+        baseAttack = 9,
+        baseDef = 5,
+        baseSAttack = 5,
+        baseSDef = 5,
+        baseSpeed = 6,
+        IVHP = 3,
+        IVAttack = 4,
+        IVDef = 2,
+        IVSAttack = 2,
+        IVSDef = 2,
+        IVSpeed = 3
+    }, 
+    ['milotic'] = {
+        name = 'milotic',
+        battleSpriteFront = 'milotic',
+        battleSpriteBack = 'milotic-back',
         baseHP = 14,
         baseAttack = 9,
         baseDef = 5,

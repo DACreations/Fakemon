@@ -11,11 +11,16 @@ function PlayState:init()
 end
 
 function PlayState:update(dt)
-    self.level:update(dt)
-    if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
-        gStateStack:push(DialogueState("Hola, que tal todo. Espero que bien. Yo si estoy bien."))
+    if love.keyboard.wasPressed('escape') then
+        gStateStack:push()
     end
-
+    if not self.dialogueOpened and love.keyboard.wasPressed('p') or love.keyboard.wasPressed('P') then
+        self.level.player.party.pokemon[1].currentHP = self.level.player.party.pokemon[1].HP
+        gStateStack:push(DialogueState('Te has curado el fakemon', function () 
+            self.dialogueOpened = false
+        end))
+    end
+    self.level:update(dt)
 end
 
 function PlayState:render()

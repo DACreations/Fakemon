@@ -90,6 +90,8 @@ gTextures = {
     ['ovni'] = love.graphics.newImage('graphics/ovni.png'),
     ['ovni-back'] = love.graphics.newImage('graphics/ovni detras.png'),
 
+    ['milotic'] = love.graphics.newImage('graphics/milotic.png'),
+
     ['tiles'] = love.graphics.newImage('graphics/sheet.png'),
 
     ['entities'] = love.graphics.newImage('graphics/entities.png'),
